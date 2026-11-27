@@ -11,9 +11,6 @@ colors = PackedColorArray(2.346374e-06, 0.39744198, 3.85046e-07, 1, 0.83938295, 
 gradient = SubResource("Gradient_ycb0e")
 fill_to = Vector2(0, 1)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_player"]
-radius = 16.0
-
 [node name="Field" type="Node2D" unique_id=211127239]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=839423776]
@@ -30,12 +27,3 @@ script = ExtResource("2_goblin")
 [node name="DragonBuilder" type="Node" parent="EnemySpawner"]
 script = ExtResource("3_dragon")
 
-[node name="Player" type="CharacterBody2D" parent="."]
-position = Vector2(570, 319.5)
-
-[node name="Polygon2D" type="Polygon2D" parent="Player"]
-polygon = PackedVector2Array(0, -20, 16, 16, -16, 16)
-color = Color(0.2, 0.5, 1, 1)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-shape = SubResource("CircleShape2D_player")
