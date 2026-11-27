@@ -25,7 +25,7 @@ public partial class GoblinBuilder : EnemyBuilder
         _product.damage = 10;
     }
     public override void buildSpeed() {
-        _product.speed = 150;
+        _product.speed = 100;
     }
     public override void buildSprite()
     {
@@ -35,7 +35,7 @@ public partial class GoblinBuilder : EnemyBuilder
 }
 public partial class DragonBuilder : EnemyBuilder
 {
-    private Texture2D texture = GD.Load<Texture2D>("res://resourses/Dragon_sprite.png");
+    private Texture2D texture = GD.Load<Texture2D>("res://resourses/Dragon_spite.png");
     public override void buildHp() 
     {
         _product.hp = 40;
@@ -44,7 +44,7 @@ public partial class DragonBuilder : EnemyBuilder
         _product.damage = 20;
     }
     public override void buildSpeed() {
-        _product.speed = 100;
+        _product.speed = 200;
     }
     public override void buildSprite()
     {

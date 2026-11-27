@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://3kytp765eu8r"]
 
+[ext_resource type="Script" uid="uid://b7ed8kfhnd8h2" path="res://scripts/EnemySpawner.cs" id="1_spawner"]
+
 [sub_resource type="Gradient" id="Gradient_ycb0e"]
 colors = PackedColorArray(2.346374e-06, 0.39744198, 3.85046e-07, 1, 0.83938295, 0.6842993, 0.42423427, 1)
 
@@ -13,3 +15,6 @@ fill_to = Vector2(0, 1)
 position = Vector2(570, 319.5)
 scale = Vector2(18.8125, 10.984375)
 texture = SubResource("GradientTexture2D_yfr1v")
+
+[node name="EnemySpawner" type="Node2D" parent="." unique_id=1494654512]
+script = ExtResource("1_spawner")

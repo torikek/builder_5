@@ -11,7 +11,8 @@ public partial class EnemyData : Resource
     [Export]
     public Texture2D texture;
 
-    public void applyTo()
+    public void applyTo(Enemy enemy)
     {
+        enemy.GetNode<Sprite2D>("Sprite2D").Texture = texture;
     }
 }
