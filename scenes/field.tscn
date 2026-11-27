@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://3kytp765eu8r"]
 
 [ext_resource type="Script" uid="uid://b7ed8kfhnd8h2" path="res://scripts/EnemySpawner.cs" id="1_spawner"]
+[ext_resource type="Script" path="res://scripts/GoblinBuilder.cs" id="2_goblin"]
+[ext_resource type="Script" path="res://scripts/DragonBuilder.cs" id="3_dragon"]
 
 [sub_resource type="Gradient" id="Gradient_ycb0e"]
 colors = PackedColorArray(2.346374e-06, 0.39744198, 3.85046e-07, 1, 0.83938295, 0.6842993, 0.42423427, 1)
@@ -8,6 +10,9 @@ colors = PackedColorArray(2.346374e-06, 0.39744198, 3.85046e-07, 1, 0.83938295, 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_yfr1v"]
 gradient = SubResource("Gradient_ycb0e")
 fill_to = Vector2(0, 1)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_player"]
+radius = 16.0
 
 [node name="Field" type="Node2D" unique_id=211127239]
 
@@ -18,3 +23,19 @@ texture = SubResource("GradientTexture2D_yfr1v")
 
 [node name="EnemySpawner" type="Node2D" parent="." unique_id=1494654512]
 script = ExtResource("1_spawner")
+
+[node name="GoblinBuilder" type="Node" parent="EnemySpawner"]
+script = ExtResource("2_goblin")
+
+[node name="DragonBuilder" type="Node" parent="EnemySpawner"]
+script = ExtResource("3_dragon")
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(570, 319.5)
+
+[node name="Polygon2D" type="Polygon2D" parent="Player"]
+polygon = PackedVector2Array(0, -20, 16, 16, -16, 16)
+color = Color(0.2, 0.5, 1, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource("CircleShape2D_player")
